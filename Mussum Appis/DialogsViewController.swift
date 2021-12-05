@@ -1,18 +1,14 @@
 //
-//  ViewController.swift
+//  DialogsViewController.swift
 //  Mussum Appis
 //
 //  Created by Romulo Oliveira Viganico on 05/12/21.
 //
 
+import Foundation
 import UIKit
 
-public struct images {
-    let smile = UIImage(named: "mussum")
-    let serious = UIImage(named: "mussum2")
-}
-
-class ViewController: UIViewController{
+class DialogsViewController: UIViewController {
     
     private lazy var firstImage: UIImageView = {
         let view = UIImageView()
@@ -21,13 +17,15 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        view.backgroundColor = .white
+        
         let imagem = images()
-        imageConfig(imgParam: firstImage, image: imagem.serious!)
+        imageConfig(imgParam: firstImage, image: imagem.smile!)
         view.addSubview(self.firstImage)
         //fazer acao clicar imagem
 //        firstButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         setConstraints()
+        
     }
     
     func imageConfig(imgParam: UIImageView, image: UIImage){
@@ -64,4 +62,6 @@ class ViewController: UIViewController{
         
         
     }
+    
+    
 }
